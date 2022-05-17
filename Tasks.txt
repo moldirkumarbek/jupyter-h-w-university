@@ -1,0 +1,137 @@
+﻿Task #1
+
+Write a code, which will have a function, that will multiply 2 matrices A and B of X to X sizes, 
+by receiving X size of the matrices and 2 pointers to matrix locations, and send the result to the main function. 
+In the main function prompt user to enter size X and A, B matrices, then print the result of their multiplication. 
+(You may use 2d dynamic arrays, pointers, and functions).
+
+Example:
+
+Input:
+3
+1 2 3
+4 5 6
+7 8 9
+
+10 11 12
+13 14 15
+16 17 18
+
+Description: 
+(1*10 + 2*13 + 3*16)  (1*11 + 2*14 + 3*17)  (1*12 + 2*15 + 3*18)
+(4*10 + 5*13 + 6*16)  (4*11 + 5*14 + 6*17)  (4*12 + 5*15 + 6*18)
+(7*10 + 8*13 + 9*16)  (7*11 + 8*14 + 9*17)  (7*12 + 8*15 + 9*18)
+
+Output:
+84 90 96
+201 216 231
+318 342 366
+_________________________________________________________________________________________________________________________________
+
+Task #2
+
+Create two structs:
+
+struct Pricelist item which has: 
+- ID // (int)
+- name // наименование товара (string)
+- price //цена (double)
+
+struct Pricelist which has:
+- ID // (int)
+- Firm // фирма выпускающая прайслист (char *)
+- date // дата составления прайс-листа (char*)
+- number of products(int) // количество продуктов
+- items(pointer to Pricelist item`s struct). //указатель на объекты Pricelist item
+
+
+Your task is to show all firms, which contains the given item in the given range sorted by price in descending order. 
+If you have more than one pricelist from the same firm, then you should output the most recent one.
+Have to: use structs, pointers and dynamic memory allocation.
+
+Input:
+n (how many pricelists) [2 <= n <= 10]
+n-times: 
+	pricelist id
+	pricelist issuer firm
+	date
+	number of products 
+	all information about pricelist items
+searched_item range(in format of xxx-yyy)
+
+Output:
+All firms, which contains the given item in the given range
+
+Example:
+
+Input:
+5
+13501 Food-master 15.06.17 4
+1 Kefir 305.34
+2 Milk 250.50
+3 Yogurt 78.56
+4 Ice-cream 95.61
+
+13502 Adal 14.07.18 3
+1 Kefir 301.34
+2 Milk 258.67
+3 Yogurt 90.15
+
+13503 Emir 17.09.17 4
+1 Kefir 310.41
+2 Milk 261.48
+3 Yogurt 79.15
+4 Butter 230.54
+
+13504 Domik_v_derevne 19.11.17 2
+1 Kefir 304.4
+2 Milk 245.45
+
+13505 Food-master 18.12.17 3
+1 Kefir 310.34
+2 Ice-cream 97.61
+3 Yogurt 79.56
+
+Yogurt 57-85
+
+Output:
+
+13503 Emir 17.09.17
+13505 Food-master 18.12.17
+
+_________________________________________________________________________________________________________________________________
+
+Task #3
+
+Train system.
+
+Each day there are a number of trains going through the station. A station consists of three platforms for trains. 
+The more longer train stays on the station the more far should be its platform (This rule applies only for that trains which arrives at the same time). 
+But the train could not use a platform which is already in use.
+Your task is to allocate a train to appropriate platform. The train has id, destination, arrival time and time when it leaves the platform.
+
+You are not allowed to use strcmp function for comparing times!
+
+Have to: use structs, functions, strings, pointers and dynamic memory allocation.
+
+Example: 
+
+Input:
+7
+201 Kostanay 12:05 12:45
+24 Astana 12:00 12:30
+19 Kyzylorda 15:20 15:40
+4 Aktobe 12:00 12:10
+57 Shymkent 15:20 15:50
+48 Taraz 12:15 15:43
+123 Kokshetau 15:41 16:00
+
+Output:
+
+201 Kostanay 12:05 12:45 3
+24 Astana 12:00 12:30 2
+19 Kyzylorda 15:20 15:40 2
+4 Aktobe 12:00 12:10 1
+57 Shymkent 15:20 15:50 3
+48 Taraz 12:15 15:43 1
+123 Kokshetau 15:41 16:00 2
